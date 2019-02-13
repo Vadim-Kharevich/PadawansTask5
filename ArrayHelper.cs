@@ -14,6 +14,13 @@ namespace PadawansTask5
             {
                 throw new ArgumentNullException();
             }
+            for(int i = 0; i < source.Length; i++)
+            {
+                if (source[i] == null)
+                {
+                    throw new ArgumentNullException();
+                }
+            }
             for(int i = 0; i < source.Length/2; i++)
             {
                 if (source[i] != source[source.Length - 1 - i])
