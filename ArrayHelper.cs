@@ -6,21 +6,17 @@ namespace PadawansTask5
     {
         public static string CheckIfSymmetric(int[] source)
         {
-            if (source.Length % 2 != 0)
+            if (source.Length == 0)
             {
-                return "No";
+                throw new ArgumentException();
             }
-            int[] mas = new int[source.Length / 2];
-            int a = -1;
-            for(int i = source.Length / 2; i < source.Length; i++)
+            if (source==null)
             {
-                a++;
-                mas[a] = source[i];
+                throw new ArgumentNullException();
             }
-            Array.Reverse(mas);
-            for (int i = 0; i < source.Length/2; i++)
+            for(int i = 0; i < source.Length/2; i++)
             {
-                if(mas[i] != source[i])
+                if (source[i] != source[source.Length - 1 - i])
                 {
                     return "No";
                 }
